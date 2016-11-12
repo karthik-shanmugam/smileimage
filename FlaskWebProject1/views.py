@@ -133,9 +133,19 @@ def suggest_image():
         print(error)
         print("%s is not a valid image!!!" % url)
         return "failure"       
-@app.route('/<string:path>', methods=['GET'])
-def static_proxy(path):
-    return send_from_directory('face-demo', path)
+@app.route('/webcam.js', methods=['GET'])
+def webcamjs():
+    return send_from_directory('face-demo', 'webcam.js')
+
+@app.route('/webcam.swf', methods=['GET'])
+def webcamswf():
+    return send_from_directory('face-demo', 'webcam.swf')
+
+@app.route('/main.js', methods=['GET'])
+def mainjs():
+    return send_from_directory('face-demo', 'main.js')
+
+
 def upload_to_imgur(path):
     link = client.upload_from_path(path)['link']
     with open("links.txt", "a") as myfile:
