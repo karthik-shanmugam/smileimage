@@ -15,7 +15,7 @@ from random import gauss
 import os
 #from rapid import overall_classification
 import pickle
-from collections import Counter, defaultdict
+#from collections import Counter, defaultdict
 import collections
 import urllib2
 # #import urllib.request
@@ -27,8 +27,8 @@ face_demo_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "face
 images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
 
-# image_reactions = defaultdict(Counter)
-# image_set = set()
+image_reactions = {}
+#image_set = set()
 with open(rpath, "rb") as reactions_file:
     image_reactions = pickle.load(reactions_file)
 
@@ -47,6 +47,10 @@ def cache_image_set():
 @app.route('/')
 def root():
     return send_from_directory(face_demo_path, 'index.html')
+
+@app.route('/data')
+def root():
+    return str(image_reactions)
 
 
 
@@ -108,7 +112,9 @@ def upload_images():
         print("flag3")
 
         if result:
-            image_reactions[content][result] += 1
+            if content not in image_reactions:
+                image_reactions[content] = {}
+            image_reactions[content][result] = image_reactions[content].get(result, 0) + 1
             cache_reactions()
             print(image_reactions)
             print(result)
