@@ -21,8 +21,8 @@ $(document).ready(function() {
           toFixed:            1,         // Number of decimal places to show in countdown
           introDuration:      0,       // Duration of spinning intro (milliseconds), set to 0 to disable
           countdownCss:       {          // Object of CSS attributes (passed to jQuery's css() function)
-                                width: "100%",
-                                height: "100%",
+                                // width: "100%",
+                                // height: "100%",
                                 margin: 0,
                                 padding: 0,
                                 textAlign: "center",
