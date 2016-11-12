@@ -5,17 +5,17 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, Flask, request, send_from_directory
 from FlaskWebProject1 import app
-# import base64
-# import json
-# # from imgurpython import ImgurClient
-# import threading
-# import random
-# from random import gauss
-# import os
-# #from rapid import overall_classification
-# import pickle
-# from collections import Counter, defaultdict
-# import urllib.request
+import base64
+import json
+# from imgurpython import ImgurClient
+import threading
+import random
+from random import gauss
+import os
+#from rapid import overall_classification
+import pickle
+from collections import Counter, defaultdict
+import urllib.request
 
 
 # rpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "reactions")
@@ -42,7 +42,7 @@ from FlaskWebProject1 import app
 
 @app.route('/')
 def root():
-    return "bobby"#send_from_directory(face_demo_path, 'index.html')
+    return "bobdby"#send_from_directory(face_demo_path, 'index.html')
 
 
 
