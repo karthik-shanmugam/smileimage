@@ -27,8 +27,7 @@ face_demo_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "face
 images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
 
-image_reactions = {}
-#image_set = set()
+
 with open(rpath, "rb") as reactions_file:
     image_reactions = pickle.load(reactions_file)
 
@@ -49,7 +48,7 @@ def root():
     return send_from_directory(face_demo_path, 'index.html')
 
 @app.route('/data')
-def root():
+def data():
     return str(image_reactions)
 
 
