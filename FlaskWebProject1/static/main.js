@@ -3,6 +3,7 @@ $(document).ready(function() {
     autoplay_interval = "empty";
 
     function collect_snapshots(delay, interval, frames) {
+        $(".emotion-img").attr("src", "");
         images = [];
         for (i = 0; i < frames; i++) { 
             setTimeout(function(){
