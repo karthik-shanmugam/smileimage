@@ -9,7 +9,7 @@ $(document).ready(function() {
         var i = 100;
         var counterBack = setInterval(function () {
             $('.progress-bar').addClass("active");
-            i = i - delay/100;
+            i = i - 100/delay;
             if (paused) {
                 $('.progress-bar').css('width', 100 + '%');
                 $('.progress-bar').removeClass("active");
