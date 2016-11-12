@@ -29,15 +29,15 @@ images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images"
 
 image_reactions = defaultdict(Counter)
 image_set = set()
-with open(rpath, "rb") as reactions_file:
-    image_reactions = pickle.load(reactions_file)
+# with open(rpath, "rb") as reactions_file:
+#     image_reactions = pickle.load(reactions_file)
 
 def cache_reactions():
     with open(rpath, "wb") as reactions_file:
         pickle.dump(image_reactions, reactions_file)
 
-with open(ipath, "rb") as images_file:
-    image_set = pickle.load(images_file)
+# with open(ipath, "rb") as images_file:
+#     image_set = pickle.load(images_file)
 
 def cache_image_set():
     with open(ipath, "wb") as images_file:
