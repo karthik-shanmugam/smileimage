@@ -4,7 +4,7 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, Flask, request, send_from_directory
-from FlaskWebProject1 import app, rapid
+from FlaskWebProject1 import app
 import sys
 import base64
 import json
@@ -17,7 +17,7 @@ import os
 import pickle
 from collections import Counter, defaultdict
 #import urllib2
-import urllib.request
+#import urllib.request
 
 
 rpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "reactions")
@@ -27,24 +27,24 @@ images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images"
 
 
 
-with open(rpath, "rb") as reactions_file:
-    image_reactions = pickle.load(reactions_file)
+# with open(rpath, "rb") as reactions_file:
+#     image_reactions = pickle.load(reactions_file)
 
-def cache_reactions():
-    with open(rpath, "wb") as reactions_file:
-        pickle.dump(image_reactions, reactions_file)
+# def cache_reactions():
+#     with open(rpath, "wb") as reactions_file:
+#         pickle.dump(image_reactions, reactions_file)
 
-with open(ipath, "rb") as images_file:
-    image_set = pickle.load(images_file)
+# with open(ipath, "rb") as images_file:
+#     image_set = pickle.load(images_file)
 
-def cache_image_set():
-    with open(ipath, "wb") as images_file:
-        pickle.dump(image_set, images_file)
+# def cache_image_set():
+#     with open(ipath, "wb") as images_file:
+#         pickle.dump(image_set, images_file)
 
 
 @app.route('/')
 def root():
-    return send_from_directory(face_demo_path, 'index.html')
+    return sys.version#send_from_directory(face_demo_path, 'index.html')
 
 
 
