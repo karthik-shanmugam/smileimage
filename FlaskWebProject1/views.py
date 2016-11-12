@@ -4,10 +4,10 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, Flask, request, send_from_directory
-from FlaskWebProject1 import app, rapid
+from FlaskWebProject1 import app
 import base64
 import json
-from imgurpython import ImgurClient
+# from imgurpython import ImgurClient
 import threading
 import random
 from random import gauss
