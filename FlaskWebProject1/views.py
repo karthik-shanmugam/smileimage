@@ -16,6 +16,7 @@ import os
 #from rapid import overall_classification
 import pickle
 from collections import Counter, defaultdict
+import collections
 import urllib2
 # #import urllib.request
 
