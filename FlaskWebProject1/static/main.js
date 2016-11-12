@@ -21,8 +21,11 @@ $(document).ready(function() {
                     case "sadness":
                         $(".emotion-img").attr("src", "emojis/frown.png");
                         break;
-                    default:
+                    case "neutral":
                         $(".emotion-img").attr("src", "emojis/neutral.png");
+                        break;
+                    default:
+                        $(".emotion-img").attr("src", "");
                 }
             });            
         }, delay+interval+200);
