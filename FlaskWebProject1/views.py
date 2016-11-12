@@ -81,6 +81,7 @@ def serve_content():
 @app.route('/images/uploads', methods=['POST'])
 def upload_images():
     #print(request.form['image'])
+    ret = ''
     try:
         global counter
         print("flag0")
@@ -95,10 +96,13 @@ def upload_images():
                 counter += 1
             with open(filename, "wb") as fh:
                 fh.write(base64.decodestring(bytes(image[23:])))
+            ret+=' open'
+
             filenames.append(filename)
         print("flag2")
 
         result = rapid.overall_classification(filenames)
+        rest+='process'
         for filename in filenames:
             os.remove(filename)
         print("flag3")
@@ -112,7 +116,7 @@ def upload_images():
         else:
             return "none"
     except Exception as e:
-        return str(e)
+        return ret + str(e)
         # link = upload_to_imgur(filename)
         # os.remove(filename)
         # emotion = classify_image(link)[0]
