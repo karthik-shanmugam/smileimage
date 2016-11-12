@@ -29,7 +29,7 @@ $(document).ready(function() {
     }
 
     $(".snap").click(function() {
-        collect_snapshots(1500, 2000, 5);
+        collect_snapshots(0, 0, 1);
     });
 
     $(".autoplay").click(function() {
@@ -60,7 +60,7 @@ $(document).ready(function() {
     function get_content() {
         $.get("content", function( data ) {
           $(".content").attr("src", data);
-          $(".snap").click();
+          collect_snapshots(1500, 2000, 2);
         });
     }
 
