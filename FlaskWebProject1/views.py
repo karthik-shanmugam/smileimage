@@ -80,37 +80,39 @@ def serve_content():
 
 @app.route('/images/uploads', methods=['POST'])
 def upload_images():
-    return "yo"
     #print(request.form['image'])
-    global counter
-    print("flag0")
-    images = json.loads(request.form['images'])
-    content = request.form['content']
-    filenames = []
-    print("flag1")
+    try:
+        global counter
+        print("flag0")
+        images = json.loads(request.form['images'])
+        content = request.form['content']
+        filenames = []
+        print("flag1")
 
-    for image in images:
-        with counter_lock:
-            filename = images_path+"/image%d.jpeg" % counter
-            counter += 1
-        with open(filename, "wb") as fh:
-            fh.write(base64.decodestring(bytes(image[23:])))
-        filenames.append(filename)
-    print("flag2")
+        for image in images:
+            with counter_lock:
+                filename = images_path+"/image%d.jpeg" % counter
+                counter += 1
+            with open(filename, "wb") as fh:
+                fh.write(base64.decodestring(bytes(image[23:])))
+            filenames.append(filename)
+        print("flag2")
 
-    result = rapid.overall_classification(filenames)
-    for filename in filenames:
-        os.remove(filename)
-    print("flag3")
+        result = rapid.overall_classification(filenames)
+        for filename in filenames:
+            os.remove(filename)
+        print("flag3")
 
-    if result:
-        image_reactions[content][result] += 1
-        cache_reactions()
-        print(image_reactions)
-        print(result)
-        return result
-    else:
-        return "none"
+        if result:
+            image_reactions[content][result] += 1
+            cache_reactions()
+            print(image_reactions)
+            print(result)
+            return result
+        else:
+            return "none"
+    except Exception as e:
+        return str(e)
         # link = upload_to_imgur(filename)
         # os.remove(filename)
         # emotion = classify_image(link)[0]
