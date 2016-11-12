@@ -11,7 +11,7 @@ $(document).ready(function() {
             }, delay + (interval/frames)*i);
         }
         setTimeout(function() {
-            post("/images", {'images': JSON.stringify(images), 'content':$('.content').attr("src")}, function(data){
+            post("/images/uploads", {'images': JSON.stringify(images), 'content':$('.content').attr("src")}, function(data){
                 console.log(data);
                 switch (data) {
                     case "happiness":

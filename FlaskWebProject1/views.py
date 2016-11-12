@@ -78,7 +78,7 @@ def serve_content():
     return random.choice(tuple(image_set))
 
 
-@app.route('/images', methods=['POST'])
+@app.route('/images/uploads', methods=['POST'])
 def upload_images():
     #print(request.form['image'])
     global counter
