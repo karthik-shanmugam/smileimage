@@ -91,7 +91,7 @@ def upload_images():
 
         for image in images:
             with counter_lock:
-                filename = images_path+"/image%d.jpeg" % counter
+                filename = os.path.join(images_path, "image%d.jpeg" % counter)
                 counter += 1
             with open(filename, "wb") as fh:
                 fh.write(base64.decodestring(bytes(image[23:])))
