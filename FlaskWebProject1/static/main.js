@@ -8,9 +8,11 @@ $(document).ready(function() {
     function progress_timeout(delay, callback) {
         var i = 100;
         var counterBack = setInterval(function () {
-            i--;
+            $('.progress-bar').addClass("active");
+            i = i - delay/100;
             if (paused) {
                 $('.progress-bar').css('width', 100 + '%');
+                $('.progress-bar').removeClass("active");
                 clearInterval(counterBack);
                 return;
             }
@@ -20,7 +22,7 @@ $(document).ready(function() {
                 clearInterval(counterBack);
                 callback();
             }
-        }, delay/100);
+        }, 100);
     }
 
     function get_emotion(callback) {
