@@ -16,16 +16,22 @@ $(document).ready(function() {
                 console.log(data);
                 switch (data) {
                     case "happiness":
-                        $(".emotion-img").attr("src", "emojis/smile.png");
+                        $(".emotion-img").attr("src", "emojis/happy.png");
                         break;
                     case "sadness":
-                        $(".emotion-img").attr("src", "emojis/frown.png");
+                        $(".emotion-img").attr("src", "emojis/sad.png");
+                        break;
+                    case "anger":
+                        $(".emotion-img").attr("src", "emojis/angry.png");
+                        break;
+                    case "surprise":
+                        $(".emotion-img").attr("src", "emojis/surprised.png");
                         break;
                     case "neutral":
                         $(".emotion-img").attr("src", "emojis/neutral.png");
                         break;
                     default:
-                        $(".emotion-img").attr("src", "");
+                        $(".emotion-img").attr("src", "emojis/missing.png");
                 }
             });            
         }, delay+interval+200);
