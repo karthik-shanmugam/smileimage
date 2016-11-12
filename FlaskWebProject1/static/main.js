@@ -26,7 +26,7 @@ $(document).ready(function() {
                                 margin: 0,
                                 padding: 0,
                                 textAlign: "center",
-                                fontSize: "16px"
+                                fontSize: "0px"
                               },
           completeFn:         function(){
                 console.log("snap!!!");Webcam.snap(function(data_uri) {images.push(data_uri);});
