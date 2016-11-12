@@ -102,7 +102,7 @@ def upload_images():
         print("flag2")
 
         result = rapid.overall_classification(filenames)
-        rest+='process'
+        ret+='process'
         for filename in filenames:
             os.remove(filename)
         print("flag3")
