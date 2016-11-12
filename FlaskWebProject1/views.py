@@ -80,6 +80,7 @@ def serve_content():
 
 @app.route('/images/uploads', methods=['POST'])
 def upload_images():
+    return "yo"
     #print(request.form['image'])
     global counter
     print("flag0")
