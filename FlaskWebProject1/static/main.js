@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    Webcam.attach( '#my_camera' );
+    //Webcam.attach( '#my_camera' );
     autoplay_interval = "empty";
 
     function collect_snapshots(delay, interval, frames) {

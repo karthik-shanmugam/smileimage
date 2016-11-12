@@ -26,7 +26,13 @@ ipath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "image_set")
 face_demo_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "face-demo")
 images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
-
+hardcoded_content = [
+"https://i.redd.it/hvzv42t0lvrx.jpg",
+"https://media.giphy.com/media/TeBpzQZRaBIC4/giphy.gif",
+"http://i.imgur.com/ZyQtepc.jpg",
+"https://i.redd.it/qmxry2ehz3xx.jpg",
+"https://i.imgur.com/LloxDJZ.gif"
+]
 
 with open(rpath, "rb") as reactions_file:
     image_reactions = pickle.load(reactions_file)
@@ -41,6 +47,8 @@ with open(ipath, "rb") as images_file:
 def cache_image_set():
     with open(ipath, "wb") as images_file:
         pickle.dump(image_set, images_file)
+
+image_set.update(hardcoded_content)
 
 
 @app.route('/')
