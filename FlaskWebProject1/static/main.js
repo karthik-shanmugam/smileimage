@@ -37,6 +37,7 @@ $(document).ready(function() {
             $(".emotion-img").attr("src", "");
             progress_timeout(interval, function() {
                 get_emotion(function(emotion){
+                    console.log(emotion)
                     switch (emotion) {
                         case "happiness":
                             $(".emotion-img").attr("src", "emojis/happy.png");
