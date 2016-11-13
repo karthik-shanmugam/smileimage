@@ -19,6 +19,7 @@ $(document).ready(function() {
             if (i > 0) {
                 $('.progress-bar').css('width', i + '%');
             } else {
+                $('.progress-bar').css('width', 0 + '%');
                 clearInterval(counterBack);
                 callback();
             }
