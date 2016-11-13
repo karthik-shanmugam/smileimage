@@ -4,9 +4,6 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template, Flask, request, send_from_directory
-import matplotlib
-import matplotlib.pyplot as plt
-import numpy as np
 from FlaskWebProject1 import app, rapid
 import sys
 import base64
@@ -78,10 +75,6 @@ def root():
 
 @app.route('/data')
 def data():
-    x = [1, 2]
-    y = [3, 4]
-    plt.plot(x, y)
-    plt.show()
     return str(image_reactions)
 
 
