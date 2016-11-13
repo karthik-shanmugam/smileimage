@@ -10,11 +10,12 @@
                 version    : 'v2.8'
             });
             FB.AppEvents.logPageView();
-            FB.login(function(){
-  			// Note: The call will only work if you accept the permission request
-  			FB.api('/me/feed', 'post', {message: 'Hello, world!'});
-			}, {scope: 'publish_actions'});
-        };
+            function myFacebookLogin() {
+                FB.login(function(){
+                    FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+                }, {scope: 'publish_actions'});}, {scope: 'publish_actions'});
+            }
+            
 
         (function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -25,6 +26,5 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
     <button onclick="myFacebookLogin()">Login with Facebook</button>
-
 </body>
 </html>
