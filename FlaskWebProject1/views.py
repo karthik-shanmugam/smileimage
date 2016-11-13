@@ -65,6 +65,9 @@ def cache_image_set():
 
 image_set.update(hardcoded_content)
 
+with open("text", 'w') as outfile:
+    json.dump(hardcoded_content, outfile, indent=4)
+
 
 @app.route('/')
 def root():
