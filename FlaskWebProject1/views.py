@@ -29,7 +29,19 @@ images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images"
 hardcoded_content = [
 "https://i.redd.it/hvzv42t0lvrx.jpg",
 "http://i.imgur.com/ZyQtepc.jpg",
-"https://i.redd.it/qmxry2ehz3xx.jpg"
+"https://i.redd.it/qmxry2ehz3xx.jpg",
+"http://www.calhacks.io/assets/img/ddoski_head.png",
+"http://i.imgur.com/1zqh2UF.jpg",
+"http://i.imgur.com/L6YdThP.jpg",
+"http://i.imgur.com/2poMXRO.gif",
+"http://i.imgur.com/aGDrQTf.jpg",
+"http://i.imgur.com/HG0I6BZ.jpg",
+"http://i.imgur.com/Ov94zes.gif",
+"http://i.imgur.com/40QmCBw.jpg",
+"http://i.imgur.com/C7a3Xpk.jpg",
+"http://i.imgur.com/sdAEN2H.jpg",
+"http://i.imgur.com/3Ddp13Y.jpg",
+"http://i.imgur.com/6OVNBfY.gif"
 ]
 
 with open(rpath, "rb") as reactions_file:
