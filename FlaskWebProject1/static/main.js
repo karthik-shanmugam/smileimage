@@ -27,7 +27,9 @@ $(document).ready(function() {
 
     function get_emotion(callback) {
         Webcam.snap(function(data_uri) {
-            post("/images/uploads", {'images': [data_uri], 'content':$('.content').attr("src")}, callback);   
+            images=[];
+            images.push
+            post("/images/uploads", {'images': JSON.stringify([data_uri]), 'content':$('.content').attr("src")}, callback);   
         });
     }
 
