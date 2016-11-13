@@ -28,10 +28,8 @@ images_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images"
 
 hardcoded_content = [
 "https://i.redd.it/hvzv42t0lvrx.jpg",
-"https://media.giphy.com/media/TeBpzQZRaBIC4/giphy.gif",
 "http://i.imgur.com/ZyQtepc.jpg",
-"https://i.redd.it/qmxry2ehz3xx.jpg",
-"https://i.imgur.com/LloxDJZ.gif"
+"https://i.redd.it/qmxry2ehz3xx.jpg"
 ]
 
 with open(rpath, "rb") as reactions_file:

@@ -1,4 +1,4 @@
-# from rapidconnect import RapidConnect
+from rapidconnect import RapidConnect
 # rapid = RapidConnect('Emotions', '24aa499b-e5a4-491e-90ce-9bb0f8d75c86');
 import base64
 import json
