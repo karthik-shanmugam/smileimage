@@ -62,6 +62,9 @@ $(document).ready(function() {
                                 $(".emotion-img").attr("src", "emojis/missing.png");
                         }
                         setTimeout(function() {
+                            if (paused) {
+                                return;
+                            }
                             cycle_content(interval);
                         }, interval);    
                     });
