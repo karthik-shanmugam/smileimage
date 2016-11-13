@@ -45,7 +45,8 @@ hardcoded_content = [
 "http://2static.fjcdn.com/pictures/Were+in+a+star+wars+universe_24c312_6087169.jpg",
 "https://fbcdn-photos-b-a.akamaihd.net/hphotos-ak-xlp1/v/t1.0-0/s480x480/14980635_1281568875218196_7120559648086095988_n.jpg?oh=8d3e8668e3a12e527e0e3af800304d36&oe=58C24F37&__gda__=1485858255_bf1620845fc7407aa3c2ec9e806a19ae",
 "https://scontent-dft4-1.xx.fbcdn.net/v/t1.0-9/14724426_1326905380675866_867562820468210362_n.jpg?oh=938c13a15cb480f6819fa62faf4730b1&oe=58C1F0F2",
-"https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpl1/v/t1.0-9/14642111_340737786270979_8973037306281854082_n.jpg?oh=8ffb0e80c641c702673eaf26ea61654d&oe=58D44960&__gda__=1490250988_5d7d3a282ec2c5cef25673b3da7a6457"
+"https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpl1/v/t1.0-9/14642111_340737786270979_8973037306281854082_n.jpg?oh=8ffb0e80c641c702673eaf26ea61654d&oe=58D44960&__gda__=1490250988_5d7d3a282ec2c5cef25673b3da7a6457",
+"http://quotesnhumor.com/wp-content/uploads/2015/08/Top-50-Funniest-Memes-Collection-images.jpg"
 ]
 
 with open(rpath, "rb") as reactions_file:
@@ -71,6 +72,7 @@ def root():
 
 @app.route('/data')
 def data():
+    print(type(image_reactions))
     return str(image_reactions)
 
 
