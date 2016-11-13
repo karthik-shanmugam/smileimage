@@ -36,35 +36,39 @@ $(document).ready(function() {
 
     function cycle_content(interval) {
         $.get("content", function( data ) {
-            $(".content").attr("src", data);
-            $(".emotion-img").attr("src", "");
-            progress_timeout(interval, function() {
-                get_emotion(function(emotion){
-                    console.log(emotion)
-                    switch (emotion) {
-                        case "happiness":
-                            $(".emotion-img").attr("src", "emojis/happy.png");
-                            break;
-                        case "sadness":
-                            $(".emotion-img").attr("src", "emojis/sad.png");
-                            break;
-                        case "anger":
-                            $(".emotion-img").attr("src", "emojis/angry.png");
-                            break;
-                        case "surprise":
-                            $(".emotion-img").attr("src", "emojis/surprised.png");
-                            break;
-                        case "neutral":
-                            $(".emotion-img").attr("src", "emojis/neutral.png");
-                            break;
-                        default:
-                            $(".emotion-img").attr("src", "emojis/missing.png");
-                    }
-                    setTimeout(function() {
-                        cycle_content(interval);
-                    }, interval);    
+            $(".content").load(function(){
+
+                $(".emotion-img").attr("src", "");
+                progress_timeout(interval, function() {
+                    get_emotion(function(emotion){
+                        console.log(emotion)
+                        switch (emotion) {
+                            case "happiness":
+                                $(".emotion-img").attr("src", "emojis/happy.png");
+                                break;
+                            case "sadness":
+                                $(".emotion-img").attr("src", "emojis/sad.png");
+                                break;
+                            case "anger":
+                                $(".emotion-img").attr("src", "emojis/angry.png");
+                                break;
+                            case "surprise":
+                                $(".emotion-img").attr("src", "emojis/surprised.png");
+                                break;
+                            case "neutral":
+                                $(".emotion-img").attr("src", "emojis/neutral.png");
+                                break;
+                            default:
+                                $(".emotion-img").attr("src", "emojis/missing.png");
+                        }
+                        setTimeout(function() {
+                            cycle_content(interval);
+                        }, interval);    
+                    });
                 });
             });
+            $(".content").attr("src", data);
+
         });       
     }
 
