@@ -59,9 +59,9 @@ $(document).ready(function() {
                         default:
                             $(".emotion-img").attr("src", "emojis/missing.png");
                     }
-                    progress_timeout(interval, function() {
+                    setTimeout(function() {
                         cycle_content(interval);
-                    });    
+                    }, interval);    
                 });
             });
         });       
