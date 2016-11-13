@@ -23,7 +23,7 @@ $(document).ready(function() {
             } else {
                 $('.progress-bar').css('width', 0 + '%');
                 clearInterval(counterBack);
-                callback();
+                setTimeout(callback, 100);
             }
         }, 100);
     }
