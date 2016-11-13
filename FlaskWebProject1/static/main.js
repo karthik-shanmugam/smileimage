@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     function cycle_content(interval) {
         $.get("content", function( data ) {
-            $(".content").load(function(){
+            $(".content").on('load', function(){
 
                 $(".emotion-img").attr("src", "");
                 progress_timeout(interval, function() {
