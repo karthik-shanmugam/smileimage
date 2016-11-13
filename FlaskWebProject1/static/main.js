@@ -2,8 +2,10 @@ $(document).ready(function() {
     Webcam.attach( '#my_camera' );
     $("#my_camera").hide();
     autoplay_interval = "empty";
-
-
+    $(".content").css("max-height", ($(window).height() - $(".content").offset().top - 15)+"px");
+    $( window ).resize(function() {
+      $(".content").css("max-height", ($(window).height() - $(".content").offset().top - 15)+"px");
+    });
 
     function progress_timeout(delay, callback) {
         var i = 100;
