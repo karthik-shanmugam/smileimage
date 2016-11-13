@@ -11,7 +11,7 @@ $(document).ready(function() {
         var i = 100;
         var counterBack = setInterval(function () {
             $('.progress-bar').addClass("active");
-            i = i - 100*150/delay;
+            i = i - 100*200/delay;
             if (paused) {
                 $('.progress-bar').css('width', 100 + '%');
                 $('.progress-bar').removeClass("active");
@@ -25,7 +25,7 @@ $(document).ready(function() {
                 clearInterval(counterBack);
                 callback();
             }
-        }, 150);
+        }, 200);
     }
 
     function get_emotion(callback) {
