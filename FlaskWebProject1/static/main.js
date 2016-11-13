@@ -39,7 +39,7 @@ $(document).ready(function() {
     function cycle_content(interval) {
         $.get("content", function( data ) {
             $(".content").on('load', function(){
-                $(".content").css("max-height", ($(window).height() - $(".content").offset().top - 15)+"px");
+                setTimeout(function(){$(".content").css("max-height", ($(window).height() - $(".content").offset().top - 15)+"px");}, 100);
 
                 $(".content").off('load');
                 $(".emotion-img").attr("src", "");
