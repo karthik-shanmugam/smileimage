@@ -78,7 +78,7 @@ $(document).ready(function() {
 
         if (!$(this).hasClass("play")) {
             paused = false;
-            cycle_content(2000);
+            cycle_content(4000);
         } else {
             paused = true;
         }
